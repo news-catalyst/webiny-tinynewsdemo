@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 //This is the GraphQL query we created earlier
 import { GET_ARTICLES } from '../graphql/queries';
-import BasicArticle from './BasicArticle';
+import ArticleListItem from './ArticleListItem';
 
 
 function ArticleList(props) {
@@ -19,7 +19,7 @@ function ArticleList(props) {
     <div className="container">
       {
         data.listBasicArticles.data.map((article) => (
-          <BasicArticle key={article.headline} {...article} />
+          <ArticleListItem key={article.headline} {...article} />
         ))
       }
 
