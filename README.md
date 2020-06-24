@@ -4,9 +4,11 @@ A tiny news site built on webiny with bulma styling.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This readme is a work in progress and will be updated as we make progress. For now, the site is a basic react app with [bulma themes](https://jenil.github.io/bulmaswatch/) as an add-on (we're using the `Journal` theme for now).
+This readme is a work in progress and will be updated as we make progress. For now, the site is a basic react app with [bulma themes](https://jenil.github.io/bulmaswatch/) as an add-on (we're using the `Journal` theme for now), making a limited number of data calls via [graphql queries](https://github.com/news-catalyst/webiny-tinynewsdemo/blob/develop/src/graphql/queries.js) to retrieve content created in a webiny admin app (aka "cms").
 
 ## Setup
+
+_Note: You should already have webiny setup before trying to run this react application. Follow the [quick start guide](https://docs.webiny.com/docs/get-started/quick-start)._
 
 You'll need to create a `.env` file in the root of your repo's top-level directory. It should contain the following environment variables that will let this react app interact with webiny APIs:
 
@@ -15,16 +17,9 @@ REACT_APP_GRAPHQL_URL="<webiny url that ends with ->/cms/read/production"
 REACT_APP_ACCESS_TOKEN="<access token needs to be created in webiny admin app>"
 ```
 
-The graphql url is output after you deploy your webiny API, but confusingly it's not called that ;) Instead it's called the "Content Delivery API" and should end in "/cms/read/production".
+The graphql url is output after you deploy your webiny API (`yarn webiny deploy api --env=local`), but confusingly it's not called that ;) Instead it's called the "Content Delivery API" and should end in "/cms/read/production".
 
-The access token needs to be created in your webiny admin app, which you should have started up after deploying the API:
-
-```
-cd apps/admin
-yarn start
-```
-
-Once the admin app is running, find the "Access Tokens" menu item on the left (scroll down). From there, create a new access token *making sure to click the Production checkbox*. Copy and paste the generated value into your `.env` file.
+The access token needs to be created in your webiny admin app, which you should have started up after deploying the API (`cd $webinydir/apps/admin && yarn start`). Once the admin app is running, find the "Access Tokens" menu item on the left (scroll down). From there, create a new access token *making sure to click the Production checkbox*. Copy and paste the generated value into your `.env` file.
 
 After you've setup the `.env` you should be able to start this react app by running:
 
