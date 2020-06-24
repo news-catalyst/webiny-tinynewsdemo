@@ -12,4 +12,17 @@ export const GET_ARTICLES = gql`{
   }
 }`;
 
-
+export const GET_ARTICLE = gql`
+  query Article($id: ID!) {
+    getBasicArticle(where: {id: $id}) {
+      data {
+        id
+        headline
+        byline {
+          fullName
+        }
+        body
+      }
+    }
+  }
+`

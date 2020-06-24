@@ -12,6 +12,7 @@ import { setContext } from 'apollo-link-context';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import About from './components/About'
+import BasicArticle from './components/BasicArticle'
 import Home from './components/Home'
 
 //This REACT_APP_GRAPHQL_URL is defined in a .env file at the root of the project
@@ -93,6 +94,7 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/articles/:id" component={BasicArticle}/>
         </Switch>
       </div>
     </Router>

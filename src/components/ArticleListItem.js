@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const ArticleListItem = ({ headline, byline }) => {
+const ArticleListItem = ({ id, headline, byline }) => {
     return (
       <article className="media">
         <figure className="media-left">
@@ -10,7 +11,7 @@ const ArticleListItem = ({ headline, byline }) => {
         </figure>
         <div className="media-content">
           <div className="content">
-            <h1 className="title">{headline}</h1>
+            <h1 className="title"><Link to={`/articles/${id}`}>{headline}</Link></h1>
             <p>
             By {byline.fullName}
             </p>

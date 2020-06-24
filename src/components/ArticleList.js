@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/react-hooks';
 import { GET_ARTICLES } from '../graphql/queries';
 import ArticleListItem from './ArticleListItem';
 
-
 function ArticleList(props) {
   const { loading, error, data } = useQuery(GET_ARTICLES);
 
@@ -14,6 +13,7 @@ function ArticleList(props) {
   if(error) {
     return <p>Error loading articles.</p>;
   }
+  console.log(data.listBasicArticles.data);
 
   return (
     <div className="container">
