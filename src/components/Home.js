@@ -1,4 +1,5 @@
 import React from 'react';
+import ArticleList from './ArticleList';
 
 function Home(props) {
   return (
@@ -6,8 +7,9 @@ function Home(props) {
       <div className="container">
         <h1 className="title">tinynews demo</h1>
         <p className="subtitle">
-          This site will be built using webiny and styled with <strong>Bulma</strong>!
+          This site is built using webiny and styled with <strong>Bulma</strong>!
         </p>
+        <ArticleList />
       </div>
     </section>
   );
