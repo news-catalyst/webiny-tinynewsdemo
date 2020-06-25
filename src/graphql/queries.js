@@ -4,9 +4,15 @@ export const GET_ARTICLES = gql`{
   listBasicArticles {
     data {
       id
-      headline
+      headline {
+        value
+      }
       byline {
-        fullName
+        value {
+          fullName {
+            value
+          }
+        }
       }
     }
   }
