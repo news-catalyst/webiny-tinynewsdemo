@@ -32,3 +32,32 @@ export const GET_ARTICLE = gql`
     }
   }
 `
+
+export const GET_AUTHORS = gql`
+{
+  listAuthors{
+    data {
+      id
+      fullName {
+        value
+      }
+    }
+  }
+}`
+
+export const GET_LOCALES = gql`
+  query listI18NLocales() {
+    i18n {
+      i18NLocales: listI18NLocales() {
+        data {
+          id
+          code
+          default
+          createdOn
+        }
+       hasNextPage
+       hasPreviousPage
+       totalCount
+      }
+    }
+  }`

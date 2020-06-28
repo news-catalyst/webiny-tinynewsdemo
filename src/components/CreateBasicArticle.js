@@ -61,15 +61,14 @@ const CreateBasicArticle = (props) => {
             </p>
       </div>
       <div className="container">
-          <form
-            onSubmit={e => {
-              e.preventDefault();
-              createArticle(newData);
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            createArticle(newData);
           }}
         >
-
-            <button className="button" type="submit">Create Article</button>
-          </form>
+          <button className="button" type="submit">Create Article</button>
+        </form>
       </div>
     </section>
   )
